@@ -6,6 +6,8 @@ import printecImg from "../assets/Printec.png";
 import japan from "../assets/japan.jpg";
 import china from "../assets/china.png";
 import korea from "../assets/korea.jpg";
+import uk from "../assets/uk-flag.png";
+import mm from "../assets/myanmar-flag.png";
 
 export const EXPERIENCE = [
     {
@@ -24,7 +26,7 @@ export const EXPERIENCE = [
         orgLink: "https://www.brightnetwork.co.uk/internship-experience-uk/ieuk-2026-technology-engineering",
         orgImage: ieukImage,
         period: "June 2026",
-        description: "Completed a virtual internship of Technology & Engineering Sector",
+        description: "Completed a four-day virtual internship of Technology & Engineering Sector featuring industry insights, professional skills development",
         logo: null,
     },
 
@@ -62,13 +64,33 @@ export const EDUCATION = [
     {
         title: "Ontario Secondary School Diploma (OSSD)",
         org: "Kanata Secondary School, Ottawa, Canada",
+        orgLink: "https://kanataacademy.com/academics/high-school/",
         period: "May 2023 - Mar 2024",
         description: "Completed high school education with a focus on computer science.",
         logo: null,
     },
 ];
 
+export const CERTIFICATIONS = [
+    {
+        title: "Hallam Bronze Award",
+        org: "Sheffield Hallam University",
+        orgLink: "https://www.shu.ac.uk/careers/programmes/hallam-award",
+        period: "October 2026",
+        description: "Acheived Hallam Bronze award for taking part in extracurricular activities and personal development."
+    },
+    {
+        title: "AI Literacy",
+        org: "Sheffield Hallam University",
+        orgLink: "https://www.shu.ac.uk/",
+        period: "March 2026",
+        description: "Completed training in AI literacy and responsible AI use.",
+    }
+];
+
 export const LANGUAGES = [
+    { title: "English", org: "IELTS", logo: uk },
+    { title: "Burmese", org: "Native", logo: mm },
     { title: "JLPT N3", org: "Japanese Language Proficiency Certificate", logo: japan },
     { title: "HSK 3", org: "Chinese Language Proficiency Certificate", logo: china },
     { title: "Korean", org: "Self-study", logo: korea },

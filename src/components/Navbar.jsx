@@ -1,15 +1,35 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import ThemePanel from "./ThemePanel";
 
+const LINKS = [
+    { label: "Home", id: "hero" },
+    { label: "About", id: "about" },
+    { label: "Projects", id: "projects" },
+    { label: "Contact", id: "contact" },
+];
+
 function Navbar({ theme, setTheme, visible }) {
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const goTo = (id) => (e) => {
+        e.preventDefault();
+        if (location.pathname === "/") {
+            document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+        } else {
+            navigate("/", { state: { scrollTo: id } });
+        }
+    };
+
     return (
         <div className={"navContainer" + (visible ? " is-visible" : "")}>
             <nav className="navbar">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    {LINKS.map(({ label, id }) => (
+                        <li key={id}>
+                            <a href={`/#${id}`} onClick={goTo(id)}>{label}</a>
+                        </li>
+                    ))}
                 </ul>
             </nav>
 

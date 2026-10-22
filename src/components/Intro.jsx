@@ -7,6 +7,9 @@ function Intro({ theme }) {
                 <h3>Hay Thar Htin Zaw</h3>
                 <p>Software Engineering Student building practical web applications.</p>
                 <p>Take a look around my developing portfolio 🔍</p>
+                <a href="/Szu-Szu-Wang-CV.pdf" download="Szu_Szu_Wang_CV.pdf" className="download-btn">
+                    Download my CV
+                </a>
             </div>
         </div>
     );

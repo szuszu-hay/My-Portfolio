@@ -1,0 +1,57 @@
+/* The sun / moon / leaf switcher.
+   Default look = tab sitting on top of the hero folder.
+   The navbar version is overridden in navbar.css (.navContainer .themeBar--nav). */
+
+.themeBar {
+    background: var(--surface);
+    border-radius: 30px 30px 0 0;
+    padding: 10px 20px;
+    width: fit-content;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    animation: riseIn 0.6s ease-out;
+}
+
+.themeBar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.themeBar li {
+    padding: 7px;
+    border-radius: 50%;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                background-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.themeBar li:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.themeBar li:active {
+    transform: translateY(-1px);
+}
+
+.themeBar button {
+    background: none;
+    border: none;
+    font-size: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+
+.themeBar button[aria-pressed="true"] {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-radius: 50%;
+}

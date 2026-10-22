@@ -80,7 +80,7 @@ function ProjectDetails({ theme }) {
                 </video>
             )}
 
-            {project.testAccounts.length > 0 && (
+            {project.testAccounts?.length > 0 && (
                 <div className="project-test-accounts">
                     <h3>Try it yourself</h3>
                     <p>Use one of these accounts to explore without signing up:</p>

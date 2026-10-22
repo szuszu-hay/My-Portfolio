@@ -1,0 +1,90 @@
+/* Sticky top row: links on the left, theme switcher on the right.
+   Hidden on the hero, fades in once you scroll past it (see App.jsx). */
+
+.navContainer {
+    position: sticky;
+    top: 20px;
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 0 20px;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.navContainer.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* both pills share one frosted-glass look */
+.navbar,
+.navContainer .themeBar--nav {
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 10px 24px;
+    border-radius: 100px;
+    width: fit-content;
+}
+
+/* two classes beat .themeBar's one, so this wins regardless of file order */
+.navContainer .themeBar--nav {
+    position: static;
+    animation: none;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-weight: 500;
+    color: inherit;
+}
+
+.navbar a:hover {
+    color: #646cff;
+}
+
+/* ---------- phone: compact so everything fits on one row at 375px,
+   and wraps neatly onto two rows on very narrow screens ---------- */
+@media (max-width: 700px) {
+    .navContainer {
+        top: 10px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .navbar,
+    .navContainer .themeBar--nav {
+        padding: 8px 14px;
+    }
+
+    .navbar ul {
+        gap: 12px;
+    }
+
+    .navbar a {
+        font-size: 13px;
+    }
+
+    .navContainer .themeBar nav ul {
+        gap: 4px;
+    }
+
+    .navContainer .themeBar li {
+        padding: 4px;
+    }
+}

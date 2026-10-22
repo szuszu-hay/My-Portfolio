@@ -24,20 +24,16 @@ function About() {
                         <a href="https://www.linkedin.com/in/szu-szu-wang-152b45387/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                             <img src={linkedinIcon} alt="" />
                         </a>
-
-                        <a href="/Szu-Szu-Wang-CV.pdf" download="Szu_Szu_Wang_CV.pdf" className="download-btn">
-                            Download CV
-                        </a>
                     </div>
                     <button className="explore-btn" onClick={scrollToProjects}>Explore my work</button>
                 </div>
 
                 <div className="about-content">
-                    <p>I am a Software Engineering student at Sheffield Hallam University interested in developing 
+                    <p>I am a <strong>Software Engineering student</strong> at Sheffield Hallam University interested in developing 
                         full-stack applications and understanding how different software affects humans' lives. <br />
                         <br />
 
-                        Most of my projects are built by using C#, ASP.NET Core, React, JavaScript, Python, and Flask. 
+                        Most of my projects are built by using <strong>C#, ASP.NET Core, React, JavaScript, Python, and Flask</strong>. 
                         These projects include e-commerce, messaging, hospital management, and real estate applications.
                         <br/><br/>
 

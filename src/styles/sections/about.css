@@ -1,0 +1,146 @@
+.about-section {
+    min-height: 100vh;
+    padding: var(--section-pad-y) var(--section-pad-x);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-section h2 {
+    text-align: center;
+}
+
+.about-layout {
+    display: flex;
+    gap: clamp(24px, 5vw, 40px);
+    align-items: flex-start;
+    width: 100%; 
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-content {
+    max-width: 700px;
+    min-width: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.about-content p {
+    line-height: 1.75;
+    font-size: 15.5px;
+    opacity: 0.9;
+}
+
+/* ---------- photo card ---------- */
+.my-pic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: clamp(18px, 4vw, 28px) clamp(16px, 4vw, 24px);
+    border-radius: 24px;
+    background: rgba(127, 127, 127, 0.05);
+    border: 1px solid rgba(127, 127, 127, 0.15);
+    flex: 0 0 310px;
+}
+
+.my-pic img {
+    width: min(260px, 100%);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 2%;
+}
+
+.social-icons img {
+    width: 44px;
+    height: 44px;
+    opacity: 0.75;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.social-icons .github-icon {
+    width: 39px;
+    height: 39px;
+}
+
+.social-icons a:hover img {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* ---------- "Currently" callout ---------- */
+.summary {
+    padding: 16px 20px;
+    border-left: 3px solid var(--summary-border);
+    background: var(--summary-bg);
+    border-radius: 0 12px 12px 0;
+}
+
+.summary p {
+    margin: 0 0 8px;
+    opacity: 1;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.summary ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 14px;
+}
+
+.summary li {
+    margin-bottom: 4px;
+    line-height: 1.5;
+}
+
+/* ---------- phone: photo card on top, text centred below ---------- */
+@media (max-width: 700px) {
+    .about-section {
+        min-height: auto;   /* don't force a screen of empty space on phones */
+    }
+
+    .about-layout {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-content {
+        align-items: center;
+    }
+
+    .my-pic {
+        flex: none;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .summary {
+        width: 100%;
+        text-align: left;
+    }
+}

@@ -1,0 +1,25 @@
+/* Shared keyframes + the single place that turns motion down.
+   (Component-specific keyframes live next to the component that uses them.) */
+
+@keyframes riseIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* reveal-on-scroll content must still be visible without the animation */
+    .about-section,
+    .experience-section,
+    .contact-section,
+    .project-card {
+        opacity: 1;
+        transform: none;
+    }
+}

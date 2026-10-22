@@ -1,0 +1,18 @@
+/* Section wrapper + grid. The card itself is in components/project-card.css */
+
+.projects-section {
+    padding: var(--section-pad-y) var(--section-pad-x);
+}
+
+.projects-header {
+    text-align: center;
+    margin-bottom: clamp(20px, 6vw, 20px);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}

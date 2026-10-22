@@ -1,5 +1,5 @@
 import { useReveal } from "../hooks/useReveal";
-import { EXPERIENCE, EDUCATION, LANGUAGES } from "../data/experience";
+import { EXPERIENCE, EDUCATION, CERTIFICATIONS, LANGUAGES } from "../data/experience";
 
 function TimelineItem({ item }) {
     return (
@@ -48,7 +48,7 @@ function ExperienceAndEdu({ theme }) {
             <h2>Experience & Education</h2>
 
             <div className="experience-grid">
-                <div className="timeline-column">
+                <div>
                     <h3>Experience</h3>
                     <div className="timeline">
                         {EXPERIENCE.map((item) => (
@@ -57,14 +57,26 @@ function ExperienceAndEdu({ theme }) {
                     </div>
                 </div>
 
-                <div className="timeline-column">
-                    <h3>Education</h3>
-                    <div className="timeline">
-                        {EDUCATION.map((item) => (
-                            <TimelineItem key={item.title} item={item} />
-                        ))}
+                <div>
+                    <div>
+                        <h3>Education</h3>
+                        <div className="timeline">
+                            {EDUCATION.map((item) => (
+                                <TimelineItem key={item.title} item={item} />
+                            ))}
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>Awards & Certification</h3>
+                        <div className="timeline">
+                            {CERTIFICATIONS.map((item) => (
+                                <TimelineItem key={item.title} item={item} />
+                            ))}
+                        </div>
                     </div>
                 </div>
+                    
             </div>
 
             <div className="languages-block">

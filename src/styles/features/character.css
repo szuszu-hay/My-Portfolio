@@ -1,0 +1,48 @@
+/* Story-theme mascot that walks down a dotted path as you scroll.
+   Keep `bottom` here in sync with TRACK_BOTTOM_GAP_PX in StoryCharacter.jsx. */
+
+.scroll-path {
+    position: fixed;
+    top: 15vh;
+    right: 48px;
+    bottom: 110px;
+    width: 2px;
+    background: repeating-linear-gradient(
+        to bottom,
+        #9c8560 0px,
+        #9c8560 4px,
+        transparent 4px,
+        transparent 10px
+    );
+    opacity: 0.35;
+    z-index: 140;
+    pointer-events: none;
+}
+
+.story-character {
+    width: 70px;
+    height: auto;
+    position: fixed;
+    right: 14px;
+    z-index: 150;
+    pointer-events: none;
+    transition: top 0.15s ease-out;
+}
+
+/* the path itself carries the movement, so walking is just a small bob */
+.story-character.pose-walking {
+    animation: char-walk-bob 0.4s ease-in-out infinite;
+}
+
+@keyframes char-walk-bob {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-3px); }
+}
+
+/* below ~900px the right-hand rail would sit on top of the content */
+@media (max-width: 900px) {
+    .scroll-path,
+    .story-character {
+        display: none;
+    }
+}

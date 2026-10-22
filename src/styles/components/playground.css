@@ -1,0 +1,278 @@
+/* Floating Playground: button, popup panel, and the games inside it */
+
+/* ---------- floating button ---------- */
+.playground-fab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 100px;
+    background: var(--solid-bg);
+    color: var(--solid-text);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    animation: playground-jump 2s ease-in-out infinite;
+}
+
+.playground-fab:hover {
+    animation-play-state: paused;
+    transform: translateY(-4px);
+}
+
+@keyframes playground-jump {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+}
+
+/* ---------- panel ---------- */
+.playground-panel {
+    position: fixed;
+    bottom: 92px;
+    right: 24px;
+    width: 380px;
+    max-width: calc(100vw - 24px);
+    padding: 10px;
+    z-index: 201;
+    overflow: hidden;
+    border-radius: 20px;
+    background: var(--surface-raised);
+    border: 1px solid var(--border-strong);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+    animation: playground-pop 0.22s ease;
+}
+
+@keyframes playground-pop {
+    from { opacity: 0; transform: translateY(10px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.playground-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 18px;
+    font-weight: 600;
+    font-size: 13px;
+    border-bottom: 1px solid var(--line);
+}
+
+.playground-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: inherit;
+    line-height: 1;
+}
+
+.playground-body {
+    padding: 18px 20px 22px;
+}
+
+.playground-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.game-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 18px 10px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: rgba(127, 127, 127, 0.06);
+    color: inherit;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.game-option:hover {
+    transform: translateY(-2px);
+    background: rgba(127, 127, 127, 0.12);
+}
+
+.game-option-icon {
+    font-size: 22px;
+}
+
+.playground-back {
+    background: none;
+    border: none;
+    color: inherit;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+/* ---------- tic-tac-toe ---------- */
+.ttt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.ttt-topbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 190px;
+    margin-bottom: 4px;
+}
+
+.ttt-score {
+    font-size: 11.5px;
+    opacity: 0.7;
+}
+
+.ttt-status {
+    font-weight: 600;
+    margin: 0;
+}
+
+.ttt-board {
+    display: grid;
+    grid-template-columns: repeat(3, 56px);
+    grid-template-rows: repeat(3, 56px);
+    gap: 6px;
+}
+
+.ttt-cell {
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: rgba(127, 127, 127, 0.06);
+    color: inherit;
+    cursor: pointer;
+}
+
+.ttt-cell:hover {
+    background: rgba(127, 127, 127, 0.12);
+}
+
+.ttt-cell:disabled {
+    cursor: default;
+}
+
+.ttt-reset {
+    margin-top: 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 100px;
+    background: #202020;
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* ---------- photo challenge ---------- */
+.photo-challenge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.photo-challenge-target-picker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.photo-challenge-target-picker button {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* the stage scales down on narrow screens; the canvas scales with it */
+.photo-challenge-stage {
+    position: relative;
+    width: min(280px, 100%);
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    overflow: hidden;
+    transform: scaleX(-1); /* mirror, like a selfie camera */
+}
+
+.photo-challenge-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-challenge-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.photo-result {
+    width: min(280px, 100%);
+    border-radius: 16px;
+    transform: scaleX(-1);
+}
+
+.photo-challenge-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* ---------- phone: icon-only button, panel spans the screen width ---------- */
+@media (max-width: 700px) {
+    .playground-fab {
+        right: 16px;
+        bottom: 16px;
+        width: 56px;
+        height: 56px;
+        padding: 0;
+        border-radius: 16px;
+        justify-content: center;
+    }
+
+    .playground-fab .fab-label {
+        display: none;
+    }
+
+    .playground-panel {
+        left: 12px;
+        right: 12px;
+        bottom: 84px;
+        width: auto;
+        max-height: calc(100vh - 110px);
+        max-height: calc(100dvh - 110px);
+        overflow-y: auto;
+    }
+
+    .playground-body {
+        padding: 14px 14px 18px;
+    }
+}

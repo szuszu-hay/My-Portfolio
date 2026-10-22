@@ -1,0 +1,27 @@
+/* Reset + page-level defaults */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(14px, 4vw, 32px);
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+}
+
+img, video, canvas {
+    max-width: 100%;
+}
+
+button {
+    font-family: inherit;
+}

@@ -10,7 +10,7 @@ function Projects({ theme }) {
             
             <div className="projects-header">
                 <h2>Projects</h2>
-                <p>A few things I've built.</p>
+                <p>A few things I've built. <br />Click to view more details.</p>
             </div>
             <div className="projects-grid">
                 {PROJECTS.map((project, i) => (

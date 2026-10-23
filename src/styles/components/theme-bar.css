@@ -1,7 +1,3 @@
-/* The sun / moon / leaf switcher.
-   Default look = tab sitting on top of the hero folder.
-   The navbar version is overridden in navbar.css (.navContainer .themeBar--nav). */
-
 .themeBar {
     background: var(--surface);
     border-radius: 30px 30px 0 0;

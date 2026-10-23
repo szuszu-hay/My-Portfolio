@@ -35,7 +35,6 @@
     padding-left: 8px;
 }
 
-/* the vertical line connecting each dot/logo */
 .timeline::before {
     content: "";
     position: absolute;
@@ -125,7 +124,6 @@ body.story-theme .timeline-period {
     opacity: 0.85;
 }
 
-/* ---------- organisation link + hover preview card ---------- */
 .timeline-org-container {
     position: relative;
     display: inline-block;
@@ -263,7 +261,6 @@ body.story-theme .timeline-period {
     }
 }
 
-/* hover popups can't work on touch screens, and would run off the edge on phones */
 @media (max-width: 700px), (hover: none) {
     .preview-popup {
         display: none !important;

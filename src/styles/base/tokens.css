@@ -3,17 +3,14 @@
     --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
     --font-mono: "Roboto Mono", ui-monospace, monospace;
 
-    /* spacing shared by every full-width section */
     --section-pad-y: clamp(60px, 10vw, 100px);
     --section-pad-x: clamp(0px, 3vw, 40px);
 
-    /* constants (same in every theme) */
     --accent: #4fd1c5;
     --line: rgba(127, 127, 127, 0.25);
     --summary-border: #b7a3a3;
     --summary-bg: rgba(136, 59, 59, 0.06);
 
-    /* LIGHT is the default, so there is no flash before JS adds the body class */
     --bg: #f1f1f1;
     --text: #202020;
     --surface: #fafafa;          /* cards */

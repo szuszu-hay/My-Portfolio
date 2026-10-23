@@ -19,7 +19,7 @@ function getEmptyIndices(squares) {
     return squares.reduce((acc, val, i) => (val ? acc : [...acc, i]), []);
 }
 
-// Minimax — plays perfectly. Computer is "O", player is "X".
+// Computer is "O", player is "X".
 function minimax(squares, isMaximizing) {
     const winner = calculateWinner(squares);
     if (winner === "O") return { score: 1 };
@@ -39,7 +39,6 @@ function minimax(squares, isMaximizing) {
 }
 
 function getComputerMove(squares, difficulty) {
-    // hard, or medium's other 50%: play the optimal move
     return minimax(squares, true).index;
 }
 
@@ -52,7 +51,6 @@ function TicTacToe() {
     const isDraw = !winner && squares.every(Boolean);
     const gameOver = Boolean(winner) || isDraw;
 
-    // Computer's turn (O), runs automatically after the player moves
     useEffect(() => {
         if (xIsNext || gameOver) return;
         const timer = setTimeout(() => {
@@ -62,16 +60,14 @@ function TicTacToe() {
             next[move] = "O";
             setSquares(next);
             setXIsNext(true);
-        }, 450); // small delay so it doesn't feel instant/robotic
+        }, 450); 
         return () => clearTimeout(timer);
     }, [xIsNext, gameOver, squares]);
 
-    // Track score once a game ends
     useEffect(() => {
         if (winner === "X") setScore((s) => ({ ...s, wins: s.wins + 1 }));
         else if (winner === "O") setScore((s) => ({ ...s, losses: s.losses + 1 }));
         else if (isDraw) setScore((s) => ({ ...s, draws: s.draws + 1 }));
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [winner, isDraw]);
 
     const handleClick = (i) => {

@@ -80,8 +80,11 @@
     margin: 0;
 }
 
-.form-feedback.success { color: var(--accent); }
-.form-feedback.error   { color: #f2617a; }
+.form-feedback.success { color: #224425; }
+.form-feedback.error   { color: #442228; }
+
+body.dark-theme .form-feedback.success { color: #dcffe0; }
+body.dark-theme .form-feedback.error { color: #eba8c1; }
 
 .contact-side {
     display: flex;
@@ -92,13 +95,17 @@
 }
 
 .contact-direct {
-    font-weight: 600;
     font-size: 15px;
     text-decoration: none;
     color: inherit;
-    border-bottom: 2px solid var(--accent);
+    border-bottom: 2px solid var(--line);
     padding-bottom: 2px;
     overflow-wrap: anywhere;
+}
+
+.contact-direct:hover {
+    transform: translateY(-1px);
+    transition: transform 0.2 ease-in-out;
 }
 
 @media (max-width: 700px) {
@@ -118,7 +125,6 @@
         align-items: center;
     }
 
-    /* 16px stops iOS Safari zooming the page when a field is focused */
     .field-group input,
     .field-group textarea {
         font-size: 16px;

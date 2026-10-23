@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar.jsx";
 import Playground from "./components/Playground.jsx";
 import ProjectDetails from "./pages/ProjectDetails.jsx";
 import CharacterGuide from "./components/character/CharacterGuide.jsx";
+import Contact from "./components/Contact";
 
 function AppContent() {
     const [theme, setTheme] = useState("light");
@@ -39,6 +40,7 @@ function AppContent() {
             </Routes>
             <CharacterGuide theme={theme} />
             <Playground theme={theme} />
+            <Contact />
         </>
     );
 }

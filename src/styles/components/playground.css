@@ -1,6 +1,3 @@
-/* Floating Playground: button, popup panel, and the games inside it */
-
-/* ---------- floating button ---------- */
 .playground-fab {
     position: fixed;
     bottom: 24px;
@@ -31,7 +28,6 @@
     50%      { transform: translateY(-8px); }
 }
 
-/* ---------- panel ---------- */
 .playground-panel {
     position: fixed;
     bottom: 92px;
@@ -187,66 +183,7 @@
     cursor: pointer;
 }
 
-/* ---------- photo challenge ---------- */
-.photo-challenge {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
 
-.photo-challenge-target-picker {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.photo-challenge-target-picker button {
-    width: 28px;
-    height: 28px;
-    border: 1px solid var(--line);
-    border-radius: 50%;
-    background: none;
-    color: inherit;
-    cursor: pointer;
-}
-
-/* the stage scales down on narrow screens; the canvas scales with it */
-.photo-challenge-stage {
-    position: relative;
-    width: min(280px, 100%);
-    aspect-ratio: 1 / 1;
-    border-radius: 16px;
-    overflow: hidden;
-    transform: scaleX(-1); /* mirror, like a selfie camera */
-}
-
-.photo-challenge-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.photo-challenge-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.photo-result {
-    width: min(280px, 100%);
-    border-radius: 16px;
-    transform: scaleX(-1);
-}
-
-.photo-challenge-actions {
-    display: flex;
-    gap: 10px;
-}
-
-/* ---------- phone: icon-only button, panel spans the screen width ---------- */
 @media (max-width: 700px) {
     .playground-fab {
         right: 16px;

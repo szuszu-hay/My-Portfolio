@@ -1,5 +1,3 @@
-/* Reset + page-level defaults */
-
 *, *::before, *::after {
     box-sizing: border-box;
 }

@@ -1,5 +1,3 @@
-/* Section wrapper + grid. The card itself is in components/project-card.css */
-
 .projects-section {
     padding: var(--section-pad-y) var(--section-pad-x);
 }

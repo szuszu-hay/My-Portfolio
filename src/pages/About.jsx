@@ -21,7 +21,7 @@ function About() {
                         <a href="https://github.com/szuszu-hay" target="_blank" rel="noreferrer" className="github-link">
                             <img className="github-icon" src={githubIcon} alt="Github Icon" />
                         </a>
-                        <a href="https://www.linkedin.com/in/szu-szu-wang-152b45387/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/szu-szu-wang-152b45387" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                             <img src={linkedinIcon} alt="" />
                         </a>
                     </div>

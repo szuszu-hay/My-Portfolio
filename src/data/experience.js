@@ -2,7 +2,7 @@ import ieukImage from "../assets/IEUK.png";
 import shuImage from "../assets/SHU.png";
 import barnardoImg from "../assets/Barnardo.jpg";
 import goGlobalImg from "../assets/GoGlobal.png";
-import printecImg from "../assets/Printec.png";
+import printecImg from "../assets/printec.png";
 import japan from "../assets/japan.jpg";
 import china from "../assets/china.png";
 import korea from "../assets/korea.jpg";

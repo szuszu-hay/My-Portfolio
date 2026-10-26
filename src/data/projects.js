@@ -36,14 +36,14 @@ export const PROJECTS = [
     {
         id: "messaging",
         title: "Messaging",
-        description: "A messaging app that allows users to make friends, create groups, and send real-time messages and file attachments.",
+        description: "A messaging app that allows users to make friends, create groups, and send messages, file attachments, and notifications.",
         highlights: [
             "Google Authentication",
             "Email Verification",
+            "Profile Management",
             "Users can search friends by username and send them a friend request.",
             "Friend requests can be accepted, rejected, and cancelled.",
-            "Users can either create groups or directly send real-time messages and file attachments to their friends.",
-            "Users can edit and customize their profile.",
+            "Users can either create groups or directly send messages and file attachments to their friends."
         ],
         tags: ["React", "C#", "ASP.NET Core Web API"],
         repo: "https://github.com/szuszu-hay/aurevo-ecommerce.git",
